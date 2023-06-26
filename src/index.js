@@ -4,6 +4,7 @@ const applyConfig = (config) => {
     isMultilingual: false,
     supportedLanguages: ['pt-br'],
     defaultLanguage: 'pt-br',
+    socialNetworks: [],
     apiExpanders: [
       ...config.settings.apiExpanders,
       {
