@@ -1,0 +1,39 @@
+{
+  "name": "@plonegovbr/volto-brasil-site",
+  "version": "0.1.0",
+  "description": "Elementos visuais para o PortalBrasil",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
+  },
+  "addons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-blocks-grid",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-slider-block",
+    "@kitconcept/volto-social-blocks",
+    "@mbarde/volto-image-crop-widget"
+  ],
+  "dependencies": {
+    "@eeacms/volto-accordion-block": "8.1.0",
+    "@kitconcept/volto-blocks-grid": "8.0.1",
+    "@kitconcept/volto-button-block": "2.3.0",
+    "@kitconcept/volto-heading-block": "2.3.0",
+    "@kitconcept/volto-separator-block": "3.2.0",
+    "@kitconcept/volto-slider-block": "4.3.0",
+    "@kitconcept/volto-social-blocks": "1.0.0-alpha.4",
+    "@mbarde/volto-image-crop-widget": "0.5.1"
+  },
+  "devDependencies": {
+    "@plone/scripts": "*"
+  }
+}
