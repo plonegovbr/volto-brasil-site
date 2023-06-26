@@ -1,3 +1,10 @@
+// Blocks
+import EAgendasBlockEdit from './components/Blocks/EAgendas/Edit';
+import EAgendasBlockView from './components/Blocks/EAgendas/View';
+
+// Icones
+import calendarSVG from '@plone/volto/icons/calendar.svg';
+
 const applyConfig = (config) => {
   config.settings = {
     ...config.settings,
@@ -36,9 +43,28 @@ const applyConfig = (config) => {
       },
     ],
   };
+  // Novos Blocos
+  config.blocks.groupBlocksOrder = [
+    ...config.blocks.groupBlocksOrder,
+    { id: 'PortalBrasil', title: 'PortalBrasil' },
+  ];
+  config.blocks.blocksConfig.eAgendas = {
+    id: 'eAgendas',
+    title: 'e-Agendas',
+    group: 'PortalBrasil',
+    icon: calendarSVG,
+    view: EAgendasBlockView,
+    edit: EAgendasBlockEdit,
+    restricted: false,
+    mostUsed: false,
+    sidebarTab: true,
+    blockHasOwnFocusManagement: false,
+  };
+
   // Grid Block
   config.blocks.blocksConfig.__grid.gridAllowedBlocks = [
     ...config.blocks.blocksConfig.__grid.gridAllowedBlocks,
+    'eAgendas',
     'video',
   ];
   // Twitter
