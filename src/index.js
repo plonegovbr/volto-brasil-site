@@ -5,7 +5,15 @@ import EAgendasBlockView from './components/Blocks/EAgendas/View';
 // Icones
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 
+// Reducers
+import site from './reducers/site/site';
+
 const applyConfig = (config) => {
+  // Reducers
+  config.addonReducers = {
+    ...config.addonReducers,
+    site,
+  };
   config.settings = {
     ...config.settings,
     isMultilingual: false,
@@ -16,13 +24,7 @@ const applyConfig = (config) => {
       ...config.settings.apiExpanders,
       {
         match: '',
-        GET_CONTENT: [
-          'breadcrumbs',
-          'navigation',
-          'actions',
-          'authors',
-          'types',
-        ],
+        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
         querystring: {
           'expand.navigation.depth': 2,
         },
@@ -72,6 +74,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.tweetBlock,
     defaultLanguage: 'pt',
   };
+
   return config;
 };
 
