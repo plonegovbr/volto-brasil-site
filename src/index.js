@@ -50,17 +50,23 @@ const applyConfig = (config) => {
     ...config.blocks.groupBlocksOrder,
     { id: 'PortalBrasil', title: 'PortalBrasil' },
   ];
-  config.blocks.blocksConfig.eAgendas = {
-    id: 'eAgendas',
-    title: 'e-Agendas',
-    group: 'PortalBrasil',
-    icon: calendarSVG,
-    view: EAgendasBlockView,
-    edit: EAgendasBlockEdit,
-    restricted: false,
-    mostUsed: false,
-    sidebarTab: true,
-    blockHasOwnFocusManagement: false,
+  const localBlocks = {
+    eAgendas: {
+      id: 'eAgendas',
+      title: 'e-Agendas',
+      group: 'PortalBrasil',
+      icon: calendarSVG,
+      view: EAgendasBlockView,
+      edit: EAgendasBlockEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: true,
+      blockHasOwnFocusManagement: false,
+    },
+  };
+  config.blocks.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    ...localBlocks,
   };
 
   // Grid Block
@@ -71,6 +77,10 @@ const applyConfig = (config) => {
     'eAgendas',
     'video',
   ];
+  config.blocks.blocksConfig.gridBlock.blocksConfig = {
+    ...config.blocks.blocksConfig.gridBlock.blocksConfig,
+    ...localBlocks,
+  };
   // Twitter
   config.blocks.blocksConfig.tweetBlock = {
     ...config.blocks.blocksConfig.tweetBlock,
