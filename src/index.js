@@ -64,8 +64,10 @@ const applyConfig = (config) => {
   };
 
   // Grid Block
-  config.blocks.blocksConfig.__grid.gridAllowedBlocks = [
-    ...config.blocks.blocksConfig.__grid.gridAllowedBlocks,
+  // Remove old Grid Block
+  config.blocks.blocksConfig.__grid.restricted = true;
+  config.blocks.blocksConfig.gridBlock.allowedBlocks = [
+    ...config.blocks.blocksConfig.gridBlock.allowedBlocks,
     'eAgendas',
     'video',
   ];
