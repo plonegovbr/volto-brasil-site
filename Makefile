@@ -22,7 +22,10 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6
-VOLTO_VERSION=17.0.0-alpha.14
+VOLTO_VERSION=17.0.0-alpha.16
+
+IMAGE_NAME=ghcr.io/plonegovbr/portal
+IMAGE_TAG=latest
 
 ADDON_NAME='@plonegovbr/volto-brasil-site'
 ADDON_PATH='volto-brasil-site'
@@ -127,3 +130,7 @@ status-test-acceptance-server: ## Status of Acceptance Server
 .PHONY: debug-frontend
 debug-frontend:  ## Run bash in the Frontend container
 	${DOCKER_COMPOSE} run --entrypoint bash addon-dev
+
+.PHONY: build-image
+build-image:  ## Build Docker Image
+	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
