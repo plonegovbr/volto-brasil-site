@@ -1,6 +1,7 @@
 // Blocks
 import EAgendasBlockEdit from './components/Blocks/EAgendas/Edit';
 import EAgendasBlockView from './components/Blocks/EAgendas/View';
+import DocumentByLineView from './components/Blocks/DocumentByLine/View';
 
 // Icones
 import calendarSVG from '@plone/volto/icons/calendar.svg';
@@ -58,6 +59,17 @@ const applyConfig = (config) => {
       icon: calendarSVG,
       view: EAgendasBlockView,
       edit: EAgendasBlockEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: true,
+      blockHasOwnFocusManagement: false,
+    },
+    documentByLine: {
+      id: 'documentByLine',
+      title: 'Document by Line',
+      group: 'PortalBrasil',
+      icon: calendarSVG,
+      view: DocumentByLineView,
       restricted: false,
       mostUsed: false,
       sidebarTab: true,
