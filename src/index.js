@@ -63,12 +63,8 @@ const applyConfig = (config) => {
     blockHasOwnFocusManagement: false,
   };
 
-  // Grid Block
-  config.blocks.blocksConfig.__grid.gridAllowedBlocks = [
-    ...config.blocks.blocksConfig.__grid.gridAllowedBlocks,
-    'eAgendas',
-    'video',
-  ];
+  // Remove old Grid Block
+  config.blocks.blocksConfig.__grid.restricted = true;
   // Twitter
   config.blocks.blocksConfig.tweetBlock = {
     ...config.blocks.blocksConfig.tweetBlock,

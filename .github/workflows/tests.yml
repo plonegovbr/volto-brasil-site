@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
           cache: 'yarn'
-          cache-dependency-path: 'frontend/yarn.lock'
+          cache-dependency-path: 'yarn.lock'
 
       - name: Prettier
         id: prettier
