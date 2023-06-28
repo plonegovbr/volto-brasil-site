@@ -1,4 +1,4 @@
-name: Frontend CI
+name: Roda testes e gera imagem
 
 on:
   push:
